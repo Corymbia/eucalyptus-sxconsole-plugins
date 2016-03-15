@@ -47,7 +47,7 @@ class Eucavolumes(sx.plugins.PluginBase):
         @type pathToPluginReportDir: String
         """
         sx.plugins.PluginBase.__init__(self, "EucaVolumes",
-                                       "This plugin provides a list of possible process issues.",
+                                       "This plugin provides a report on volumes.",
                                        ["Sosreport", "Sysreport"], False, True,
                                        {},
                                        pathToPluginReportDir)
