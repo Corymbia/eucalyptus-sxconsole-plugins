@@ -1,0 +1,10 @@
+baseurl = "http://example.com/"
+languageCode = "en-us"
+title = "Eucalyptus SXConsole Report"
+theme = "eucasx"
+[[menu.main]]
+ name = "Configurations"
+ weight=-10
+ identifier = "eucaconfig"
+ url = "/eucaconfig"
+ 
