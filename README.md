@@ -4,7 +4,7 @@
 
 This project provides eucalytpus cloud specific plugins for the sxconsolue utility. The plugins are written in Python and are designed to provide diagnostic reports for the Eucalyptus cloud.
 
-This plugins work a bit differently than "normal" sxconsole plugins in that they generate content to be processed by the [Hugo](https://gohugo.io/) site generator. Currently there is not a text based output of the reports. 
+The plugins work a bit differently than "normal" sxconsole plugins in that they generate content to be processed by the [Hugo](https://gohugo.io/) site generator. Currently there is not a text based output of the reports. 
 
 sxconsole only operates on the input given to it. If two sosreports from a Node Controller are processed for a particular case, then the sxconsole report will only generate data it can glean from those sosreports. Likewise if you feed it sosreports from the CLC, SC, CC and NCs then you will get a better picture of the cloud from the sxconsole report. The plugins should not be written in a way that **requires** dependent sosreports, at least it should run without causing errors.
 
