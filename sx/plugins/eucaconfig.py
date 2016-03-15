@@ -187,7 +187,7 @@ class Eucaconfig(sx.plugins.PluginBase):
             self.write(filename, "")
             self.write(filename, '<table class="pure-table pure-table-bordered">')
             self.write(filename, '<thead>')
-            self.write(filename, "<td>Property</td><td>Value</td>")
+            self.write(filename, "<th>Property</th><th>Value</th>")
             self.write(filename, '</thead>')
             self.write(filename, '<tbody>')
             for j, i in enumerate(sorted(self.euca_properties)):
@@ -237,13 +237,6 @@ class Eucaconfig(sx.plugins.PluginBase):
             self.write(filename, '</tbody>')
             self.write(filename, '</table>')
 
-    def action(self):
-        """
-        This function performs some external task such as opening web
-        browser or file viewer to view a file.
-        """
-        # Always print this message if you going to call this function
-        #: so that logging is notified that this function has been called.
     def action(self):
         """
         This function performs some external task such as opening web
