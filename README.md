@@ -10,9 +10,9 @@ sxconsole only operates on the input given to it. If two sosreports from a Node 
 
 This project leverages the following technologies:
 
-[sxconsole](https://fedorahosted.org/sx/wiki)
-[Hugo](https://gohugo.io)
-[Pure](http://purecss.io)
+* [sxconsole](https://fedorahosted.org/sx/wiki)
+* [Hugo](https://gohugo.io)
+* [Pure](http://purecss.io)
 
 The current list of reports provided:
 
@@ -25,10 +25,10 @@ The current list of reports provided:
 
 **Note:** This software is a work in progress.
 
-1) Install sxconsole, check the following page on how to install: (https://fedorahosted.org/sx/wiki)
-2) Download and install Hugo, make sure it is in your PATH
-3) Lay down the hugo skeleton files to /usr/share/eucalyptus/hugo
-4) Copy the plugins into ~/.sx/sxplugins
+1. Install sxconsole, check the following page on how to install: (https://fedorahosted.org/sx/wiki)
+2. Download and install Hugo, make sure it is in your PATH
+3. Lay down the hugo skeleton files to /usr/share/eucalyptus/hugo
+4. Copy the plugins into ~/.sx/sxplugins
 
 ## Execution:
 
