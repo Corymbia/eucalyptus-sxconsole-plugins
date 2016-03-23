@@ -164,15 +164,19 @@ class Eucavolumes(sx.plugins.PluginBase):
         # so that logging is notified that this function has been called.
         message = "Performing action for plugin: %s" %(self.getName())
         logging.getLogger(sx.MAIN_LOGGER_NAME).status(message)
-        old_dir = self.getPathToPluginReportDir()
-        h, t = os.path.split(old_dir)
-        # Make sure content directory exists
-        content_dir = os.path.join(h,"content")
-        if not os.path.exists(content_dir):
-                os.mkdir(content_dir)
-        new_dir = os.path.join(content_dir,t)
-        message = "Moving directory from %s to %s" % (old_dir, new_dir)
-        logging.getLogger(sx.MAIN_LOGGER_NAME).status(message)
-        if os.path.exists(new_dir):
-            shutil.rmtree(new_dir)
-        os.rename(old_dir, new_dir)
+
+        # if no volumes are detected, don't attempt to move a directory
+        # that won't exist.
+        if len(self.volumes) > 0:
+            old_dir = self.getPathToPluginReportDir()
+            h, t = os.path.split(old_dir)
+            # Make sure content directory exists
+            content_dir = os.path.join(h,"content")
+            if not os.path.exists(content_dir):
+                    os.mkdir(content_dir)
+            new_dir = os.path.join(content_dir,t)
+            message = "Moving directory from %s to %s" % (old_dir, new_dir)
+            logging.getLogger(sx.MAIN_LOGGER_NAME).status(message)
+            if os.path.exists(new_dir):
+                shutil.rmtree(new_dir)
+            os.rename(old_dir, new_dir)

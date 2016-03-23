@@ -109,10 +109,11 @@ class Eucatopology(sx.plugins.PluginBase):
                 # doesn't have the correct information.
                 #
                 ip_addr_info = report.getDataFromFile("ifconfig")
-                ip_addrs = [m.group(1) for m in [ipv4_re.match(i) for i in ip_addr_info] if m is not None]
-		ip_addrs = set(ip_addrs)
-		ip_addrs.remove("127.0.0.1")
-                self.__hostname_to_ip.setdefault(report.getHostname(), set()).update(ip_addrs)
+                if ip_addr_info is not None:
+                    ip_addrs = [m.group(1) for m in [ipv4_re.match(i) for i in ip_addr_info] if m is not None]
+		    ip_addrs = set(ip_addrs)
+		    ip_addrs.remove("127.0.0.1")
+                    self.__hostname_to_ip.setdefault(report.getHostname(), set()).update(ip_addrs)
 
                 euca_services_output = report.getDataFromFile("sos_commands/eucafrontend/euca-describe-services-all")
                
