@@ -140,7 +140,8 @@ class Eucaconfig(sx.plugins.PluginBase):
                         self.euca_properties.setdefault(key, []).append(value)
                     else:
                         # append to last property until we reach a new state (read: PROPERTY)
-                        self.euca_properties[key].append(i)
+                        if key is not None:
+                            self.euca_properties[key].append(i)
 
             euca_conf_file = report.getDataFromFile("etc/eucalyptus/eucalyptus.conf")
             if euca_conf_file is not None:
